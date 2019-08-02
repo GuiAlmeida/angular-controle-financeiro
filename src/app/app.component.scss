@@ -1,0 +1,52 @@
+@import "./components/shared/styles/shared";
+
+.main {
+  grid-gap: 30px;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__content {
+    grid-area: content;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-template-columns: 20px 1fr 20px;
+
+    @media (min-width: 1200px) {
+      grid-template-columns: auto 1100px auto;
+    }
+  }
+
+  &__footer {
+    grid-area: footer;
+    grid-row-start: 3;
+  }
+
+  &__sidebar {
+    position: absolute;
+    width: 84%;
+    height: 100%;
+    right: -100%;
+    transition: all 0.5s;
+
+    @media (min-width: 768px) {
+      width: 34%;
+    }
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+}

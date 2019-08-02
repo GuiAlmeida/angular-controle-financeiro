@@ -1,0 +1,95 @@
+@import "../../shared/styles/variables";
+
+h3 {
+  text-align: center;
+  margin-bottom: 25px;
+
+  @media (min-width: 768px) {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+table {
+  width: 100%;
+
+  th,
+  td {
+    border-top: 1px solid $border-color-gray;
+  }
+
+  th,
+  tfoot td {
+    padding-left: 35px;
+  }
+
+  th {
+    padding: 0px 10px 5px 35px;
+    border-top: none;
+    text-align: left;
+
+    @media (min-width: 768px) {
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  td {
+    padding: 13px 10px;
+    vertical-align: middle;
+
+    &:first-child {
+      width: 60%;
+
+      @media (min-width: 768px) {
+        width: 30%;
+      }
+    }
+
+    span {
+      margin-right: 15px;
+    }
+
+    .icon-list {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-image: url('../../../../assets/icons/trash.png');
+      width: 19px;
+      height: 30px;
+      margin-right: 0;
+      margin-left: 10px;
+      display: inline-block;
+      position: absolute;
+      top: 5px;
+      &:hover{
+         opacity: .5;
+         cursor: pointer;
+      }
+    }
+  }
+
+  tbody tr td:last-child,
+  tfoot tr td:last-child {
+    text-align: right;
+    padding-right: 40px;
+    position: relative;
+  }
+
+  tfoot tr td {
+    border-top: 3px double $border-color-gray;
+    padding: 10px 10px 0px 35px;
+  }
+
+  tfoot tr:last-child {
+    td {
+      padding: 0px 10px;
+      border: none;
+    }
+  }
+}
+
+.empty-list {
+  text-align: center;
+}

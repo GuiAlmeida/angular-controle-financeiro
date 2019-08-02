@@ -1,0 +1,132 @@
+@import "../styles/shared";
+
+.background {
+  background-color: $background;
+}
+
+.header {
+  background-color: $background;
+  grid-template-columns: 20px 40px auto 40px 20px;
+  grid-template-rows: 10px 46px 10px;
+
+  @media (min-width: 1024px) {
+    grid-column-start: 1;
+    grid-template-columns: 0px 40px auto 340px 0px;
+    grid-template-rows: 20px 40px 20px;
+    grid-column-gap: 20px;
+  }
+
+  @media (min-width: 1200px) {
+    grid-column-start: 2;
+    grid-template-columns: 40px auto 340px;
+    grid-template-rows: 20px 40px 20px;
+    grid-column-gap: 20px;
+  }
+
+  &__icon {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../../../../assets/icons/logo.jpg);
+
+    @media (min-width: 1024px) {
+      grid-column-start: 2;
+      grid-column-end: 2;
+    }
+
+    @media (min-width: 1200px) {
+      grid-column-start: 1;
+      grid-column-end: 1;
+    }
+
+
+  }
+
+  &__h1 {
+    place-self: center stretch;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    align-items: center;
+    color: $dark-color;
+    text-align: center;
+    font-size: 1.3rem;
+
+    @media (min-width: 1024px) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      text-align: left;
+    }
+
+    @media (min-width: 1200px) {
+      grid-column-start: 2;
+      grid-column-end: 2;
+      text-align: left;
+    }
+
+  }
+
+  &__menu-desktop {
+    display: none;
+    background-color: #fff;
+
+    @media (min-width: 1024px) {
+      display: flex;
+      grid-column-start: 7;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      align-items: center;
+
+      &-a {
+        text-align: center;
+        width: 33%;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      display: flex;
+      grid-column-start: 7;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      align-items: center;
+
+      &-a {
+        text-align: center;
+        width: 40%;
+
+        &.--border {
+          border-right: 1px solid $dark-color;
+        }
+
+        &:hover {
+          color: $border-color-gray;
+          cursor: pointer;
+        }
+
+      }
+    }
+
+  }
+
+  &__menu-icon {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-image: url(../../../../assets/icons/menu-icon.png);
+
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+}
