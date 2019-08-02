@@ -41,7 +41,7 @@ export class TransactionListComponent implements OnChanges {
     this.transactionList.splice(i, 1);
     console.log('this.transactionList.length', this.transactionList.length)
     if (this.transactionList.length > 0) {
-      this.total = this.total - this.transactionList[i].price;
+      this.total = this.total -= this.transactionList[i].price;
     }
     this.LocalStorageService.deleteTransactionListFromLocalStorage(this.transactionList);
 
